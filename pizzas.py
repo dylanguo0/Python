@@ -6,3 +6,6 @@ number = []
 
 for item in pizzas:
     number.append(int(input(f'How many {item} pizzas do we want? ')))
+
+for i in range(len(pizzas)):
+    print(f'{pizzas[i - 1].title()}: {number[i - 1]}')
