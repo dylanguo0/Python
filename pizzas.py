@@ -3,3 +3,6 @@
 # Defines the list for all the pizzas and number of them
 pizzas = ['cheese', 'chicken', 'pepperoni', 'veggie']
 number = []
+
+for item in pizzas:
+    number.append(int(input(f'How many {item} pizzas do we want? ')))
