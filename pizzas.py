@@ -1,4 +1,4 @@
-''' This program asks the user how many cheese, chicken, pepperoni, and veggie pizzas they want '''
+''' This program asks the user how many cheese, chicken, pepperoni, and veggie pizzas they want and skips any which weren't ordered '''
 
 # Defines the list for all the pizzas and number of them
 pizzas = ['cheese', 'chicken', 'pepperoni', 'veggie']
@@ -6,6 +6,7 @@ number = []
 
 # Goes through all the different types of pizzas and asks the user how many of each they want
 for item in pizzas:
+    # Keeps asking the user for an input until it's valid
     while True:
         try:
             amount = int(input(f'How many {item} pizzas do we want? '))
