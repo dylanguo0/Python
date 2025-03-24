@@ -17,11 +17,10 @@ while speed != BREAK_LOOP:
     # Keeps asking the user for a speed until they enter a valid input
     try:
         speed = float(speed)
-        if speed >= 0:
-            if speed > UNSAFE:
-                unsafe_speeds.append(speed)
-        else:
+        if speed < 0:
             print('Error, invalid input.')
+        elif speed > UNSAFE:
+            unsafe_speeds.append(speed)
     except ValueError:
         print('Error, invalid input.')
 
