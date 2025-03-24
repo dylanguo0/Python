@@ -1,5 +1,5 @@
 ''' This program asks the user for a descent speed of a space shuttle until they type in 'conclude'. If the user user enters an invalid input, the program will
-    print 'Error, invalid input', and ask again. After the user types in conclude, it'll print out all the unsafe speeds, which are speeds faster than 10m/s'''
+    print 'Error, invalid input.', and ask again. After the user types in conclude, it'll print out all the unsafe speeds, which are speeds faster than 10m/s'''
 
 # Defines the unsafe speed and break loop condition
 UNSAFE = 10
@@ -17,8 +17,11 @@ while speed != BREAK_LOOP:
     # Keeps asking the user for a speed until they enter a valid input
     try:
         speed = float(speed)
-        if speed > UNSAFE:
-            unsafe_speeds.append(speed)
+        if speed >= 0:
+            if speed > UNSAFE:
+                unsafe_speeds.append(speed)
+        else:
+            print('Error, invalid input.')
     except ValueError:
         print('Error, invalid input.')
 
