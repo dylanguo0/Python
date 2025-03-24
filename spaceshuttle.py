@@ -30,8 +30,13 @@ while True:
         unsafe_speeds.append(speed)
 
 # Show how many unsafe speeds there were and print all the unsafe speeds
-print(f'There were {len(unsafe_speeds)} space shuttles faster than the safe speed.')
-if len(unsafe_speeds) != 0:
-    print('The unsafe speeds are')
-    for speed in unsafe_speeds:
-        print(speed)
+if len(unsafe_speeds) != 1:
+    print(f'There were {len(unsafe_speeds)} space shuttles faster than the safe speed.')
+    if len(unsafe_speeds) != 0:
+        print('The unsafe speeds are')
+        for speed in unsafe_speeds:
+            print(speed)
+else:
+    print('There was 1 space shuttle faster than the safe speed.')
+    print('The unsafe speed is')
+    print(unsafe_speeds[0])
