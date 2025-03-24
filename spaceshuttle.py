@@ -10,16 +10,26 @@ unsafe_speeds = []
 
 # Keeps asking the user for a speed until they enter 'conclude'
 while True:
-    speed = input('Input descent speed in m/s: ')
+
+    # Keeps asking the user for a speed until they enter a valid input
+    while True:
+        try:
+            speed = input('Input descent speed in m/s: ')
+            if speed != BREAK_LOOP:
+                speed = float(speed)
+            break
+        except ValueError:
+            print('Error, invalid input.')
+    
+    # Breaks the loop if the user entered 'conclude'
     if speed == BREAK_LOOP:
         break
-    else:
-        speed = float(speed)
-    
+
     # Adds it to the list of unsafe speeds if it is unsafe
     if speed > UNSAFE:
         unsafe_speeds.append(speed)
 
+# Show how many unsafe speeds there were and print all the unsafe speeds
 print(f'There were {len(unsafe_speeds)} space shuttles faster than the safe speed.')
 print('The unsafe speeds are')
 for speed in unsafe_speeds:
