@@ -3,6 +3,15 @@
 
 # Defines the unsafe speed
 UNSAFE = 10
+BREAK_LOOP = 'conclude'
 
 # Defines the list which contains all the unsafe speeds
 unsafe_speeds = []
+
+# Keeps asking the user for a speed until they enter 'conclude'
+while True:
+    speed = input('Input descent speed in m/s:')
+    if speed == BREAK_LOOP
+        break
+    else:
+        speed = float(speed)
