@@ -8,26 +8,22 @@ BREAK_LOOP = 'conclude'
 # Defines the list which contains all the unsafe speeds
 unsafe_speeds = []
 
+# Asks the user for a speed
+speed = input('Input descent speed in m/s: ')
+
 # Keeps asking the user for a speed until they enter 'conclude'
-while True:
+while speed != BREAK_LOOP:
 
     # Keeps asking the user for a speed until they enter a valid input
-    while True:
-        try:
-            speed = input('Input descent speed in m/s: ')
-            if speed != BREAK_LOOP:
-                speed = float(speed)
-            break
-        except ValueError:
-            print('Error, invalid input.')
-    
-    # Breaks the loop if the user entered 'conclude'
-    if speed == BREAK_LOOP:
-        break
+    try:
+        speed = float(speed)
+        if speed > UNSAFE:
+            unsafe_speeds.append(speed)
+    except ValueError:
+        print('Error, invalid input.')
 
-    # Adds it to the list of unsafe speeds if it is unsafe
-    if speed > UNSAFE:
-        unsafe_speeds.append(speed)
+    # Asks the user for a speed
+    speed = input('Input descent speed in m/s: ')
 
 # Show how many unsafe speeds there were and print all the unsafe speeds
 if len(unsafe_speeds) != 1:
