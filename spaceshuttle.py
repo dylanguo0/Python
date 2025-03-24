@@ -10,8 +10,10 @@ unsafe_speeds = []
 
 # Keeps asking the user for a speed until they enter 'conclude'
 while True:
-    speed = input('Input descent speed in m/s:')
-    if speed == BREAK_LOOP
+    speed = input('Input descent speed in m/s: ')
+    if speed == BREAK_LOOP:
         break
     else:
         speed = float(speed)
+    if speed > UNSAFE:
+        unsafe_speeds.append(speed)
