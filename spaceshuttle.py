@@ -33,6 +33,4 @@ if len(unsafe_speeds) != 1:
         for speed in unsafe_speeds:
             print(speed)
 else:
-    print('There was 1 space shuttle faster than the safe speed.')
-    print('The unsafe speed is')
-    print(unsafe_speeds[0])
+    print(f'There was 1 space shuttle faster than the safe speed.\nThe unsafe speed is\n{unsafe_speeds[0]}')
